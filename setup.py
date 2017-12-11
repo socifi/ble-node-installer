@@ -45,8 +45,8 @@ def custom_command():
 	etcconfig = ConfigParser.RawConfigParser()
 
 	etcconfig.add_section('Communication')
-	etcconfig.set('Communication', 'Elastic', 'elastic-euw-1.socifi.com')
-	etcconfig.set('Communication', 'Elastic_Port', '9200')
+	etcconfig.set('Communication', 'Elastic', 'ble-logging.socifi.com')
+	etcconfig.set('Communication', 'Elastic_Port', '443')
 	etcconfig.set('Communication', 'Registration', bleurl+'node/register')
 	etcconfig.set('Communication', 'Configuration', bleurl+'node/configuration')
 	etcconfig.add_section('User')
@@ -84,7 +84,7 @@ class CustomEggInfoCommand(egg_info):
 
 setup(
 	name='Ble Node Install',
-	version='0.1.0',
+	version='0.1.1',
 	description='',
 	long_description=long_description,
 	url='',
@@ -106,11 +106,11 @@ setup(
 	keywords='ble bluetooth',
 	packages=[name],
 	install_requires=['ble_positioning_node'],
-	dependency_links=['https://github.com/socifi/ble-positioning-node/tarball/master#egg=ble-positioning-node-0.1.0'],
+	dependency_links=['https://github.com/socifi/ble-positioning-node/tarball/master#egg=ble_positioning_node-0.1.1'],
 	package_dir={name: 'installer'},
 	entry_points={'console_scripts': [
 		name+' = installer.install:main',
-		'ble-node-install = installer.child:main',
+		'ble_node_install = installer.child:main',
 		],
 	},
 )

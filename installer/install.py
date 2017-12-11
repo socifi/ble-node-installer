@@ -16,7 +16,7 @@ from datetime import datetime
 version = '0.1.0'
 ip = '34.236.161.213'
 port = 5005
-configfile = '/etc/ble-node-installer/config.json'
+configfile = '/etc/ble_node_installer/config.json'
 
 def mac_get():
 	devId = 0
@@ -86,7 +86,7 @@ def main():
 		link = ""
 		if('link' in data['update']):
 			link = data['update']['link']
-		p = subprocess.Popen(['beacons-node-install', link], cwd=dirpath)
+		p = subprocess.Popen(['ble_node_install', link], cwd=dirpath)
 
 
 	# Download and run additional script (ie. for self update)
