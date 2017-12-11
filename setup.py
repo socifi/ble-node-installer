@@ -46,7 +46,7 @@ def custom_command():
 
 	etcconfig.add_section('Communication')
 	etcconfig.set('Communication', 'Elastic', 'ble-logging.socifi.com')
-	etcconfig.set('Communication', 'Elastic_Port', '343')
+	etcconfig.set('Communication', 'Elastic_Port', '443')
 	etcconfig.set('Communication', 'Registration', bleurl+'node/register')
 	etcconfig.set('Communication', 'Configuration', bleurl+'node/configuration')
 	etcconfig.add_section('User')
