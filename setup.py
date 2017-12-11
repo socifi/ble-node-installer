@@ -106,7 +106,7 @@ setup(
 	keywords='ble bluetooth',
 	packages=[name],
 	install_requires=['ble_positioning_node'],
-	dependency_links=['https://github.com/socifi/ble-positioning-node/tarball/master#egg=beacons-positioning-node-1.0.0'],
+	dependency_links=['https://github.com/socifi/ble-positioning-node/tarball/master#egg=ble-positioning-node-0.1.0'],
 	package_dir={name: 'installer'},
 	entry_points={'console_scripts': [
 		name+' = installer.install:main',
