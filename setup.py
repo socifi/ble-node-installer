@@ -12,6 +12,8 @@ import ConfigParser
 here = path.abspath(path.dirname(__file__))
 
 name = 'ble_node_installer'
+log_proxy = 'ble-logging.socifi.com'
+log_proxy_port = '9339'
 cronfile = '/etc/cron.hourly/ble_node_update'
 configfile = '/etc/ble_node_installer/config.json'
 scannerconfigfile = '/etc/ble_positioning_node/config.conf'
@@ -45,8 +47,8 @@ def custom_command():
 	etcconfig = ConfigParser.RawConfigParser()
 
 	etcconfig.add_section('Communication')
-	etcconfig.set('Communication', 'Elastic', 'ble-logging.socifi.com')
-	etcconfig.set('Communication', 'Elastic_Port', '443')
+	etcconfig.set('Communication', 'log_proxy', log_proxy)
+	etcconfig.set('Communication', 'log_proxy_port', log_proxy_port)
 	etcconfig.set('Communication', 'Registration', bleurl+'node/register')
 	etcconfig.set('Communication', 'Configuration', bleurl+'node/configuration')
 	etcconfig.add_section('User')
