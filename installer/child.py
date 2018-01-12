@@ -10,18 +10,16 @@ def main():
 	dirpath = tempfile.mkdtemp()
 	os.chdir(dirpath)
 	p = None
-	env = os.environ.copy()
 	branch = ['-b', 'master']
-	dev = os.environ.get('BLE_DEV_NODE')
 	if(os.environ.has_key("BLE_DEV_NODE")):
 		branch = ['-b', 'dev']
 
 	print branch
 
 	if(len(sys.argv) > 1 and sys.argv[1] != ""):
-		p = subprocess.call(['git', 'clone', '--depth=1', '--single-branch'] + branch + [sys.argv[1]], env=env)
+		p = subprocess.call(['git', 'clone', '--depth=1', '--single-branch'] + branch + [sys.argv[1]])
 	else:
-		p = subprocess.call(['git', 'clone', '--depth=1', '--single-branch'] + branch + ['https://github.com/socifi/ble-positioning-node'], env=env)
+		p = subprocess.call(['git', 'clone', '--depth=1', '--single-branch'] + branch + ['https://github.com/socifi/ble-positioning-node'])
 	os.chdir(os.listdir('.')[0])
 	p = subprocess.call(['pip', 'install', '--upgrade', '.'])
 
