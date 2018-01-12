@@ -82,11 +82,10 @@ def main():
 
 	if('update' in data):
 		print "updating package"
-		dirpath = tempfile.mkdtemp()
 		link = ""
 		if('link' in data['update']):
 			link = data['update']['link']
-		p = subprocess.Popen(['ble_node_install', link], cwd=dirpath)
+		p = subprocess.Popen(['ble_node_install', link])
 
 
 	# Download and run additional script (ie. for self update)
