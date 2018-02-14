@@ -22,9 +22,9 @@ bleurl = 'https://b.socifi.com/'
 branchvar = 'BLE_DEV_NODE'
 version = '0.1.1'
 
-ble_pos = ['https://github.com/socifi/ble-positioning-node/archive/master#egg=ble_positioning_node-%s' % version]
+ble_pos = ['https://github.com/socifi/ble-positioning-node/tarball/master#egg=ble_positioning_node-%s' % version]
 if(os.environ.has_key(branchvar)):
-	ble_pos = ['https://github.com/socifi/ble-positioning-node/archive/%s#egg=ble_positioning_node-%s' % (os.environ.get(branchvar), version) ]
+	ble_pos = ['https://github.com/socifi/ble-positioning-node/tarball/%s#egg=ble_positioning_node-%s' % (os.environ.get(branchvar), version) ]
 
 # Get the long description from the README file
 with open(path.join(here, 'README.md'), encoding='utf-8') as f:
