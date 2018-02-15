@@ -12,9 +12,7 @@ def main():
 	p = None
 	branch = ['-b', 'master']
 	if(os.environ.has_key("BLE_DEV_NODE")):
-		branch = ['-b', 'dev']
-
-	print branch
+		branch = ['-b', os.environ['BLE_DEV_NODE']]
 
 	if(len(sys.argv) > 1 and sys.argv[1] != ""):
 		p = subprocess.call(['git', 'clone', '--depth=1', '--single-branch'] + branch + [sys.argv[1]])
